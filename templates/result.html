@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Price Tracker</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="#7e57c2 blue darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo  h1">Price Tracker</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+      </ul>
+
+  </nav>
+<div class="result" style="border: 2px solid black; background-color:#ff0288; height:81vh; text-align:center;">
+
+    {% if price <= userprice %}
+    <h3 style="color:white; font-family:Verdana;font-weight:bold;margin-top:200px;">Congrats!!!👍<br> The Price Of the Product DropDown To Your Requirement.
+    A mail From Price Tracker Coming On YOur Way With The Product Link and Other Details..</h3>
+    {% elif price != req_price %}
+    <h4 style="color:yellow;margin-top:150px;font-weight:bolder;">We Will Let You Know When The Price of The Product Drop Down To You Requirment</h4>
+    <h5 style="color:white;font-weight:bold;">Below All the credentials Given By You</h5>
+       <h6 style="font-family: verdana;font-size:26px;text-align:left; color:white;border:1px solid white;height:30%; width:70%;margin-left:15%"> 
+        <br>
+        Product Name: {{user}}<br>
+        Current Price: {{price}}<br>
+        Your Email: {{useremail}}<br>
+        Required Price:{{userprice}}
+    </h6>
+    <br> <br> <br> <br> <br>
+    <h4 style="color:chartreuse; font-weight:bolder;">Thanks For Using Our Service😃</h4>
+    {% endif %}
+</div>
+  <footer class="page-footer #1565c0 blue darken-3" style="position:fixed;left: 0;bottom: 0;width: 100%;">
+    <div class="footer-copyright">
+      <div class="container text-center">
+        <p>&COPY;Abhayparashar31
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+</script>
+  </body>
+</html>
+-
