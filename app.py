@@ -33,10 +33,8 @@ def input():
         res = requests.get(f'{url}')
         soup = BeautifulSoup(res.text,'html.parser')
         name = soup.select('._35KyD6')[0].getText()
-        print("\n"+name)
         price = soup.select('._3qQ9m1')[0].getText()
         price = int(price[1:].replace(",",""))
-        print(price)
     elif "amazon" in url.lower():
         print("Amazon:\n")
         res = requests.get(url,headers=headers)
@@ -50,7 +48,6 @@ def input():
         price_num = price_num.replace(",","")
         price = int(float(price_num))
         #print(f"{name} with a price of {price}")
-        print(f"\n{name}\n {price}")
     if (price <= req_price) :
             email = EmailMessage()
             email['from'] = 'Price tracker'
@@ -63,8 +60,6 @@ def input():
                 smtp.starttls()
                 smtp.login('deltadelta371@gmail.com','delta@31')
                 smtp.send_message(email)
-                print("Email Send!")
-                
             fields=[name,price,req_price,email_user,url]
             with open(r'data_user.csv', 'a',newline="") as f:
                 writer = csv.writer(f)
