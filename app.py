@@ -60,10 +60,10 @@ def input():
                 smtp.starttls()
                 smtp.login('deltadelta371@gmail.com','delta@31')
                 smtp.send_message(email)
-            fields=[name,price,req_price,email_user,url]
-            with open(r'data_user.csv', 'a',newline="") as f:
-                writer = csv.writer(f)
-                writer.writerow(fields)
+#             fields=[name,price,req_price,email_user,url]
+#             with open(r'data_user.csv', 'a',newline="") as f:
+#                 writer = csv.writer(f)
+#                 writer.writerow(fields)
             x=x+1
     else:
         global y
